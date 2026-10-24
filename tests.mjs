@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {analyze,sample} from './engine.mjs';
+import {sync} from './engine.mjs';test('quote arithmetic uses integer cents',()=>assert.equal(analyze(sample).metrics[0][1],'$142.00'));test('offline queue and conflict preserve server version',()=>{const o=JSON.parse(sample);assert.equal(sync(o,1,false).status,'QUEUED');assert.equal(sync(o,2).status,'CONFLICT');assert.deepEqual(sync(o,1),{status:'SYNCED',version:2})});

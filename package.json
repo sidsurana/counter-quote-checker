@@ -1,0 +1,10 @@
+{
+  "name": "counter-quote-checker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests.mjs"
+  },
+  "description": "Create a proposed quote for a synthetic order item and check it against catalog prices.",
+  "license": "MIT"
+}
